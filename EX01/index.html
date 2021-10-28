@@ -16,9 +16,15 @@
         canvas.width = 480;
         canvas.height = 320;
 
-        let x = 150;
-        let y = 100;
-        let a = 0; // angulo
+// especificações do primeiro elemento 
+        let x1 = 150;
+        let y1 = 100;
+        let a1 = 0; // angulo
+
+// especificações do segundo elemento
+        let x2 = 0;
+        let y2 = 100;
+        let a2 = 0; // angulo
         
         let t0;
         let dt;
@@ -36,19 +42,24 @@
 
         // desenha elemento
         cpx.fillStyle = "white";
-        cpx.fillRect(x,y,20,20);
+        cpx.fillRect(x1,y1,20,20);
 
-        // atualiza estados
-        x = x + 10 * dt;
-        //y = y + 20 * dt;
-        a = a + 2*Math.PI*dt;
-        y = 100 + 100*Math.cos(a); 
+        //desenha segundo elemento
+        cpx.fillStyle = "red";
+        cpx.fillRect(x2,y2,20,20);
+
+        // atualiza estados primeiro elemento
+        x1 = x1 + 10 * dt;        
+        a1 = a1 + 2*Math.PI*dt;
+        y1 = 100 + 100*Math.cos(a1); 
+
+        
 
         requestAnimationFrame(desenha);
         t0 = tempo;
         }
 
-       
+    
 
 
     </script>

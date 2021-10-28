@@ -53,7 +53,10 @@
         a1 = a1 + 2*Math.PI*dt;
         y1 = 100 + 100*Math.cos(a1); 
 
-        
+        // atualiza estados segundo elemento
+        y2 = y2 + 10 * dt;        
+        a2 = a2 + 2*Math.PI*dt;
+        x2 = 100 + 100*Math.cos(a2); 
 
         requestAnimationFrame(desenha);
         t0 = tempo;

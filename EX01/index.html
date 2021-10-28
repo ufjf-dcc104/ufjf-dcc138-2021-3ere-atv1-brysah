@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DCC130 Exemlpo01</title>
+</head>
+<body>
+    <h1>DCC138 Exemlpo01</h1>
+    <canvas></canvas>
+    <p>por Brysah Vidal </p>
+    <script>
+        let canvas = document.querySelector("canvas");
+        let cpx = canvas.getContext("2d");
+        canvas.width = 480;
+        canvas.height = 320;
+
+        let x = 150;
+        let y = 100;
+        
+        let t0;
+        let dt;
+        
+        requestAnimationFrame(desenha);
+
+        function desenha(tempo){
+        //if (t0 === undefined) t0 = t;
+        t0 = t0 ?? tempo;
+        dt = (tempo - t0)/1000;
+
+        // desenha fundo
+        cpx.fillStyle = "black";
+        cpx.fillRect(0,0,canvas.width,canvas.height);
+
+        // desenha elemento
+        cpx.fillStyle = "white";
+        cpx.fillRect(x,y,20,20);
+
+        // atualiza estados
+        x = x + 10 * dt;
+        //y = y + 20 * dt;
+        y = 100 + 500*Math.cos(tempo/200)*dt; 
+
+        requestAnimationFrame(desenha);
+        t0 = tempo;
+        }
+
+       
+
+
+    </script>
+   
+    
+</body>
+</html>

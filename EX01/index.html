@@ -18,6 +18,7 @@
 
         let x = 150;
         let y = 100;
+        let a = 0; // angulo
         
         let t0;
         let dt;
@@ -40,7 +41,8 @@
         // atualiza estados
         x = x + 10 * dt;
         //y = y + 20 * dt;
-        y = 100 + 500*Math.cos(tempo/200)*dt; 
+        a = a + 2*Math.PI*dt;
+        y = 100 + 100*Math.cos(a); 
 
         requestAnimationFrame(desenha);
         t0 = tempo;
